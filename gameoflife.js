@@ -2,6 +2,8 @@ var rows, columns;
 
 function tablemake()
 {
+	
+		document.write("<table border ='4'>");
 		rows = prompt("Please enter the number of rows","");
 		columns = prompt("Please enter the number of columns","");
 		
@@ -14,4 +16,5 @@ function tablemake()
 				}
 				document.write("</tr>");
 			}
+		document.write("</table>");
  }
