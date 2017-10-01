@@ -10,4 +10,30 @@ Random rand = new Random();
             System.out.println();
         }
         
-        //This is in java.
+        //This is in java. Javascript doesn't have multidimensional so we need to use array of array.
+        //Basic idea on how to fill each table slot with an array item.
+        
+ <-------->
+
+int livecheck;
+int[][] ConarrayNext = new int[5][5];
+        for(int i = 0; i < 5; i++)
+        {
+            for(int j =0; j < 5; j++)
+            {
+                livecheck = Conarray[i+1][j] + Conarray[i-1][j] + Conarray[i][j+1] + Conarray[i][j-1];
+                if(livecheck <2 || livecheck > 3)
+                {
+                        ConarrayNext[i][j] = 0;
+                }
+                else
+                {
+                        ConarrayNext[i][j] = 1;
+                }
+                System.out.print(ConarrayNext[i][j]);
+            }
+            System.out.println();
+        }
+        
+//Logic for making the next generation's array. Count how many neighbors are alive, then set itself to 0 or 1 depending on that number.
+//Repeat for every single slot.
