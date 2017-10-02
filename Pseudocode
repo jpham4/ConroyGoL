@@ -1,0 +1,51 @@
+//	.js file logic
+function checkCell() {
+
+}
+
+// for every cell that’s dead or alive, do the following
+for ( int cell : list ) { 	// for each cell in the array list
+	// check following positions
+	[1](row -1, column -1)	[2](row -1, column +0 )	[3](row -1, column +1)
+	[4](row 0, column -1)	  [5](row +0, column +0)	[6](row +0, column +1)
+	[7](row +1, column -1)	[8](row +1, column +0)	[9](row +1, column +1)
+
+int liveCellTotal = 0;
+function checkNeighbor() {
+	while ( [position 5] is dead or alive {
+
+		if ( [position 1] is filled ) liveCellTotal++;
+
+		if ( [position 2] is filled ) liveCellTotal++;
+
+		if ( [position 3] is filled ) liveCellTotal++;
+
+		if ( [position 4] is filled ) liveCellTotal++;
+
+		if ( [position 6] is filled ) liveCellTotal++;
+
+		if ( [position 7] is filled ) liveCellTotal++;
+
+		if ( [position 8] is filled ) liveCellTotal++;
+
+		if ( [position 9] is filled ) liveCellTotal++;
+	}
+}
+
+// check if dead cell or live cell
+// can use switch statements here if needed
+if ( live cell ) {
+	if (liveCellTotal < 2 or liveCellTotal > 3) cell dies;
+	else if (liveCellTotal == 2 or liveCellTotal == 3) cell lives;
+}
+else if ( dead cell )
+	if (liveCellTotal == 3) dead cell becomes live cell;
+
+}
+
+// commentary from another friend
+for each cell run function hasNeighbors()
+if hasNeighbors(), evaluateNeighbors()
+for each coordinate at array, apply that to coordinates of original point, and get count of total#ofAliveNeighbors
+
+pass original point to each function as a parameter and then repeat for each existingNeighbor
