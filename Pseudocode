@@ -7,7 +7,7 @@ function checkCell() {
 for ( int cell : list ) { 	// for each cell in the array list
 	// check following positions
 	[1](row -1, column -1)	[2](row -1, column +0 )	[3](row -1, column +1)
-	[4](row 0, column -1)	  [5](row +0, column +0)	[6](row +0, column +1)
+	[4](row 0, column -1)	[5](row +0, column +0)	[6](row +0, column +1)
 	[7](row +1, column -1)	[8](row +1, column +0)	[9](row +1, column +1)
 
 int liveCellTotal = 0;
