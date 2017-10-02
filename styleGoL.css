@@ -1,0 +1,36 @@
+td{
+    width: 20px;
+    height: 20px;
+    background: #e0e0eb;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td.tdClass2{
+    background-color: black;
+}
+
+tr{
+    width: 20px;
+    height: 20px;
+    background: #e0e0eb;
+
+}
+
+table{
+    cursor: default;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.input{
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+input[type="checkbox"]{
+    margin: 0;
+}
