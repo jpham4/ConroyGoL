@@ -150,9 +150,9 @@ function tablemake()
 	{
 		for(var p = 1; p <= columns; p++)
 		{
+			nextCellID=o+","+p;
 			if(nextCell.innerHTML=".")
-			{
-				nextCellID=o+","+p;
+			{	
 				nextCell.className="tdClass2";
 				nextCell.innerHTML="";
 			}
@@ -164,4 +164,3 @@ function tablemake()
 		}
 	}
  }
-
