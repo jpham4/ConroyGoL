@@ -30,7 +30,7 @@ function tablemake()
 			}
  }
  
- function increment1()
+function increment1()
 {
 	 for(var m = 1; m <= rows; m++)
 	 {
@@ -64,40 +64,40 @@ function tablemake()
 			 var nextCellDown = document.getElementById(Down);
 			 var nextCellDownRight = document.getElementById(DownRight);
 			 
-			 if(nextCellUpLeft.className="tdClass2")
+			 if(mUp !=0 && nLeft !=0 && nextCellUpLeft.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellUp.className="tdClass2")
+			 if(mUp !=0 && nextCellUp.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellUpRight.className="tdClass2")
+			 if(mUp !=0 && nRight <=columns && nextCellUpRight.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellLeft.className="tdClass2")
+			 if(nLeft !=0 && nextCellLeft.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellRight.className="tdClass2")
+			 if(nRight <=columns && nextCellRight.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellDownLeft.className="tdClass2")
+			 if(mDown <=rows && nLeft !=0 && nextCellDownLeft.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellDown.className="tdClass2")
+			 if(mDown <=rows && nextCellDown.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
-			 if(nextCellDownRight.className="tdClass2")
+			 if(mDown <=rows && nRight <=columns && nextCellDownRight.className="tdClass2")
 			 {
 				 onOff = onOff+1;
 			 }
 			 
-			 if(onOff = 2 || onOff = 3)
+			 if(onOff == 2 || onOff == 3)
 			 {
 				 nextCell.className="tdClass2";
 			 }
