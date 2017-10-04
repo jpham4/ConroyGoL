@@ -62,7 +62,7 @@ function tablemake()
 			 
  function increment1()
 {
-	for(var m = 1; m < rows; m++)
+	for(var m = 1; m <= rows; m++)
 	{
 		for(var n = 1; n <= columns; n++)
 		{
@@ -87,44 +87,52 @@ function tablemake()
 			  nextCell = document.getElementById(nextCellID);
 			  nextCellUpLeft = document.getElementById(UpLeft);
 			  nextCellUp = document.getElementById(Up);
-			  nextCellUpRight = document.getElementById(UpLeft);
+			  nextCellUpRight = document.getElementById(UpRight);
 			  nextCellLeft = document.getElementById(Left);
 			  nextCellRight = document.getElementById(Right);
 			  nextCellDownLeft = document.getElementById(DownLeft);
 			  nextCellDown = document.getElementById(Down);
 			  nextCellDownRight = document.getElementById(DownRight);
 			 
-			 if(mUp !=0 && nLeft !=0 && nextCellUpLeft.className=="tdClass2")
+			 if(mUp !=0 && nLeft !=0)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellUpLeft.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(mUp !=0 && nextCellUp.className=="tdClass2")
+			 if(mUp !=0)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellUp.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(mUp !=0 && nRight <=columns && nextCellUpRight.className=="tdClass2")
+			 if(mUp !=0 && nRight <=columns)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellUpRight.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(nLeft !=0 && nextCellLeft.className=="tdClass2")
+			 if(nLeft !=0)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellLeft.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(nRight <=columns && nextCellRight.className=="tdClass2")
+			 if(nRight <=columns)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellRight.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(mDown <=rows && nLeft !=0 && nextCellDownLeft.className=="tdClass2")
+			 if(mDown <=rows && nLeft !=0)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellDownLeft.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(mDown <=rows && nextCellDown.className=="tdClass2")
+			 if(mDown <=rows)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellDown.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
-			 if(mDown <=rows && nRight <=columns && nextCellDownRight.className=="tdClass2")
+			 if(mDown <=rows && nRight <=columns)
 			 {
-				 onOff = onOff+1;
+				 if(nextCellDownRight.className=="tdClass2")
+				 {onOff = onOff+1;}
 			 }
 			 
 			 if(onOff == 2 || onOff == 3)
@@ -144,6 +152,7 @@ function tablemake()
 		{
 			if(nextCell.innerHTML=".")
 			{
+				nextCellID=o+","+p;
 				nextCell.className="tdClass2";
 				nextCell.innerHTML="";
 			}
