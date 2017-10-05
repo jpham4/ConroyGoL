@@ -1,17 +1,17 @@
 
 var rows, columns, liveCellTotal = 0;
 	grid = new Array();
-	i, j;
+// var	i, j;
 function makeTable() {
     table.id = "table";
 	rows = prompt("Please enter the number of rows","");
 	columns = prompt("Please enter the number of columns","");
 
-	for(i = 0; i < rows; i++) {
+	for(let i = 0; i < rows; i++) {
 			var tr = document.createElement("tr");
 			grid[i] = new Array();
 			console.log(grid[i]);
-			for(j = 0; j < columns; j++)
+			for(let j = 0; j < columns; j++)
 			{
 				var td = document.createElement("td");
 				grid[i][j] = false;
@@ -176,4 +176,3 @@ var nextCellID;
 		}
 	}
  }
-// THIS NEEDS TO DELETED
