@@ -8,17 +8,17 @@
     <link rel="stylesheet" type="text/css" href="styleGoL.css">
 </head>
 
-<body>
+<body onload="tablemake()">
 
 <h1>Conway's Game of Life</h1>
 <table id="table" border="1"></table>
 <br>
 <form>
-    <input type="button" onclick="tablemake()" value="Start">
+    <input type="button" value="Start">
     <input type="button" value="Stop">
-    <input type="button" value="Increment 1">
+    <input type="button" onclick="increment1()" value="Increment 1">
     <input type="button" value="Increment 23">
-    <input type="button" value="Reset">
+    <input type="button" onclick="reset()" value="Reset">
 </form>
 
 </body>
