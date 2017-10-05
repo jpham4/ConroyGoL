@@ -1,74 +1,86 @@
-var rows, columns;
 
-function tablemake()
-{
-    
-        table.id = "table";
-		rows = prompt("Please enter the number of rows","");
-		columns = prompt("Please enter the number of columns","");
+var rows, columns, liveCellTotal = 0;
+	grid = new Array();
+	i, j;
+function makeTable() {
+    table.id = "table";
+	rows = prompt("Please enter the number of rows","");
+	columns = prompt("Please enter the number of columns","");
 
-		for(var j = 1; j <= rows; j++)
+	for(i = 0; i < rows; i++) {
+			var tr = document.createElement("tr");
+			grid[i] = new Array();
+			console.log(grid[i]);
+			for(j = 0; j < columns; j++)
 			{
-				var tr = document.createElement("tr");
-				for(var i = 1; i <= columns; i++)
-				{
-					var td = document.createElement("td");
-					
-					var rowcol = ""+j+","+i;
-					td.setAttribute('id',rowcol);
-                    td.onmousedown = function () {
-                        if (this.className != "tdClass2") {
-                            this.className = "tdClass2";
-							this.innerHTML=".";
-                        }
-                        else {
-                            this.removeAttribute("Class");
-							this.innerHTML="";
-                        }
-                    };
-                    tr.appendChild(td);
-					table.appendChild(tr);
-				}
+				var td = document.createElement("td");
+				grid[i][j] = false;
+				//console.log(i);
+                //console.log(j);
+				var rowcol = "" + i + ", " + j;
+				td.setAttribute('id',rowcol);
+                td.onmousedown = function() {
+                	
+                    if (this.className != "tdClass2") {
+                        this.className = "tdClass2";
+                        liveCellTotal++;
+                        console.log(i);
+                        console.log(j);
+                        grid[i][j] = true;
+                        //alert(i,", ", j);
+						//this.innerHTML=".";
+                    }
+                    else {
+                    	this.removeAttribute("Class");
+                    	liveCellTotal--;
+                    	//console.log("this works!");
+						//this.innerHTML="";
+					}
+                };
+                tr.appendChild(td);
+				table.appendChild(tr);
 			}
+		}
  }
  
-			var nextCellID;
-			 
-			 var mUp;
-			 var mDown;
-			 var nLeft;
-			 var nRight;
+var nextCellID;
+ 
+ var mUp;
+ var mDown;
+ var nLeft;
+ var nRight;
 
-			 var UpLeft;
-			 var Up;
-			 var UpRight;
-			 var Left;
-			 var Right;
-			 var DownLeft;
-			 var Down;
-			 var DownRight;
-			 
-			 var onOff;
-			 
-			 var nextCell;
-			 var nextCellUpLeft;
-			 var nextCellUp;
-			 var nextCellUpRight;
-			 var nextCellLeft;
-			 var nextCellRight;
-			 var nextCellDownLeft;
-			 var nextCellDown;
-			 var nextCellDownRight;
+ var UpLeft;
+ var Up;
+ var UpRight;
+ var Left;
+ var Right;
+ var DownLeft;
+ var Down;
+ var DownRight;
+ 
+ var onOff;
+ 
+ var nextCell;
+ var nextCellUpLeft;
+ var nextCellUp;
+ var nextCellUpRight;
+ var nextCellLeft;
+ var nextCellRight;
+ var nextCellDownLeft;
+ var nextCellDown;
+ var nextCellDownRight;
 			 
  function increment1()
 {
+	console.log("increment1 is being called!");
 	for(var m = 1; m <= rows; m++)
 	{
 		for(var n = 1; n <= columns; n++)
 		{
-			  nextCellID = m+","+n;
+			  nextCellID = m + "," + n;
 			 
-			  mUp = m-1;
+			  mUp = m - 1;
 			  mDown = m+1;
 			  nLeft = n-1;
 			  nRight = n+1;
