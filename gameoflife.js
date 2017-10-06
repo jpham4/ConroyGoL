@@ -138,7 +138,15 @@ function increment1() {
 		}
 	}
 	grid = newGrid;
+}
 
+ function increment23()
+{
+	for(var i=0; i<23;i++)
+	{
+		increment1();
+	}
+}
 
 // topleft	if (row!=0 || column!=0 ) check [row# - 1][column# - 1];      //make sure position is not on upper or left bounds
 // top		if (row!=0 ) check [row# - 1][column#];     //make sure position is not on upper bound
@@ -148,7 +156,7 @@ function increment1() {
 // bottomleft	if (row!= rows-1(which is 2) || column != 0)  check [row# + 1][column# - 1]      //make sure position is not on bottom or left bounds
 // bottom		if (row!= rows-1(which is 2))  check [row# + 1][column#]    //make sure position is not on bottom bound
 // bottomright	if (row!= rows-1(which is 2) || column!= columns-1(which is 2)) check check [row# + 1][column# + 1]  //make sure position is not on bottom or right bounds
- }
+ 
 			 
 //  function increment1()
 // {
