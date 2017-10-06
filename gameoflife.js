@@ -1,7 +1,8 @@
 
 var rows, columns;
-	grid = new Array(); 
+	grid = new Array();
 	var runner = null;
+	var currentGen =0;
 function makeTable() {
     table.id = "table";
 	rows = prompt("Please enter the number of rows","");
@@ -47,8 +48,8 @@ function makeTable() {
 			}
 		}
  }
-
-function start()
+ 
+ function start()
  {
 	clearInterval(runner);
 	runner = setInterval(function(){ increment1() },500);
@@ -58,6 +59,35 @@ function start()
  {
 	clearInterval(runner);
  }
+
+ 
+var nextCellID;
+ 
+ var mUp;
+ var mDown;
+ var nLeft;
+ var nRight;
+
+ var UpLeft;
+ var Up;
+ var UpRight;
+ var Left;
+ var Right;
+ var DownLeft;
+ var Down;
+ var DownRight;
+ 
+ var onOff;
+ 
+ var nextCell;
+ var nextCellUpLeft;
+ var nextCellUp;
+ var nextCellUpRight;
+ var nextCellLeft;
+ var nextCellRight;
+ var nextCellDownLeft;
+ var nextCellDown;
+ var nextCellDownRight;
 
 function increment1() {
 	let newGrid = new Array();
@@ -111,10 +141,14 @@ function increment1() {
 			grid[i][j] = newGrid[i][j];
 		}
 	}
+	
+	var counter = document.getElementById("Counter");
 	grid = newGrid;
+	currentGen += 1;
+	counter.innerHTML="Current Generation "+currentGen;
 }
 
- function increment23()
+function increment23()
 {
 	for(var i=0; i<23;i++)
 	{
@@ -133,4 +167,7 @@ function reset1()
 		}
 	}
 	clearInterval(runner);
+	var counter = document.getElementById("Counter");
+	currentGen = 0;
+	counter.innerHTML ="Current Generation "+currentGen;
 }
