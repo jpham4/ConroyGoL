@@ -13,19 +13,21 @@
 <h1>Conway's Game of Life</h1>
 <table id="table" border="1"></table>
 <br>
-<table>
-<tr>
+
 <form>
     <input type="button" onclick="start()" value="Start">
     <input type="button" onclick="stop()" value="Stop">
     <input type="button" onclick="increment1()" value="Increment 1">
     <input type="button" onclick="increment23()" value="Increment 23">
 	<input type="button" onclick="reset1()" value="Clear Board">
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td id="Counter">Current Generation</td>
+        </tr>
+    </table>
 </form>
-</tr>
-<tr>
-<td id="Counter">Current Generation</td>
-</tr>
 
 </body>
 </html>
