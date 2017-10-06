@@ -16,8 +16,7 @@ function makeTable() {
 			{
 				var td = document.createElement("td");
 				grid[i][j] = false;
-				//console.log(i);
-                //console.log(j);
+
 				var rowcol = "" + i + ", " + j;
 				td.setAttribute('id',rowcol);
                 td.onmousedown = function() {
@@ -27,20 +26,10 @@ function makeTable() {
                         console.log(i);
                         console.log(j);
                         grid[i][j] = true;
-                        //liveList.push(grid[i][j]);
-                        //displayLiveList();
-                        //var x = i;
-                        //var y = j;
-                        //displayCoordinates();
-                        //alert(i,", ", j);
-						//this.innerHTML=".";
                     }
                     else {
                     	this.removeAttribute("Class");
                     	grid[i][j] = false;
-                    	//liveList.pop(grid[i][j]);
-                    	//console.log("this works!");
-						//this.innerHTML="";
 					}
                 };
                 tr.appendChild(td);
@@ -59,35 +48,6 @@ function makeTable() {
  {
 	clearInterval(runner);
  }
-
- 
-var nextCellID;
- 
- var mUp;
- var mDown;
- var nLeft;
- var nRight;
-
- var UpLeft;
- var Up;
- var UpRight;
- var Left;
- var Right;
- var DownLeft;
- var Down;
- var DownRight;
- 
- var onOff;
- 
- var nextCell;
- var nextCellUpLeft;
- var nextCellUp;
- var nextCellUpRight;
- var nextCellLeft;
- var nextCellRight;
- var nextCellDownLeft;
- var nextCellDown;
- var nextCellDownRight;
 
 function increment1() {
 	let newGrid = new Array();
