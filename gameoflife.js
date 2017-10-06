@@ -21,7 +21,6 @@ function makeTable() {
 				var rowcol = "" + i + ", " + j;
 				td.setAttribute('id',rowcol);
                 td.onmousedown = function() {
-                	
                     if (this.className != "tdClass2") {
                         this.className = "tdClass2";
                         console.log(i);
