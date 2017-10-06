@@ -1,6 +1,6 @@
 
 var rows, columns;
-	grid = new Array();
+	grid = new Array(); // loop through this grid and set all attributes to false on reset
 	//liveList = new Array();
 // var	i, j;
 function makeTable() {
@@ -48,42 +48,6 @@ function makeTable() {
 			}
 		}
  }
-
- /*function displayLiveList(x, y) {
- 	console.log(liveList);
- 	//this.grid[i] = x;
- 	//this.grid[j] = y;
- 	//console.log(x);
- 	//console.log(y);
- }*/
- 
-var nextCellID;
- 
- var mUp;
- var mDown;
- var nLeft;
- var nRight;
-
- var UpLeft;
- var Up;
- var UpRight;
- var Left;
- var Right;
- var DownLeft;
- var Down;
- var DownRight;
- 
- var onOff;
- 
- var nextCell;
- var nextCellUpLeft;
- var nextCellUp;
- var nextCellUpRight;
- var nextCellLeft;
- var nextCellRight;
- var nextCellDownLeft;
- var nextCellDown;
- var nextCellDownRight;
 
 function increment1() {
 	let newGrid = new Array();
@@ -139,127 +103,3 @@ function increment1() {
 	}
 	grid = newGrid;
 }
-
- function increment23()
-{
-	for(var i=0; i<23;i++)
-	{
-		increment1();
-	}
-}
-
-// topleft	if (row!=0 || column!=0 ) check [row# - 1][column# - 1];      //make sure position is not on upper or left bounds
-// top		if (row!=0 ) check [row# - 1][column#];     //make sure position is not on upper bound
-// topright	if (row!=0 || column!= columns-1(which is 2) ) check [row# - 1][column# + 1];     //make sure position is not on upper or right bounds
-// left		if (column !=0) check [row#][column# - 1]    //make sure position is not on left bound
-// right		if (column!= columns-1(which is 2)) check [row#][column# + 1]     //make sure position is not on right bound
-// bottomleft	if (row!= rows-1(which is 2) || column != 0)  check [row# + 1][column# - 1]      //make sure position is not on bottom or left bounds
-// bottom		if (row!= rows-1(which is 2))  check [row# + 1][column#]    //make sure position is not on bottom bound
-// bottomright	if (row!= rows-1(which is 2) || column!= columns-1(which is 2)) check check [row# + 1][column# + 1]  //make sure position is not on bottom or right bounds
- 
-			 
-//  function increment1()
-// {
-// 	console.log("increment1 is being called!");
-// 	for(var m = 1; m <= rows; m++)
-// 	{
-// 		for(var n = 1; n <= columns; n++)
-// 		{
-// 			  nextCellID = m + "," + n;
-			 
-// 			  mUp = m - 1;
-// 			  mDown = m+1;
-// 			  nLeft = n-1;
-// 			  nRight = n+1;
-			 
-// 			  UpLeft = mUp+","+nLeft;
-// 			  Up = mUp+","+n;
-// 			  UpRight = mUp+","+nRight;
-// 			  Left = m+","+nLeft;
-// 			  Right = m+","+nRight;
-// 			  DownLeft = mDown+","+nLeft;
-// 			  Down = mDown + "," + n;
-// 			  DownRight = mDown+","+nRight;
-			 
-// 			  onOff = 0;
-			 
-// 			  nextCell = document.getElementById(nextCellID);
-// 			  nextCellUpLeft = document.getElementById(UpLeft);
-// 			  nextCellUp = document.getElementById(Up);
-// 			  nextCellUpRight = document.getElementById(UpRight);
-// 			  nextCellLeft = document.getElementById(Left);
-// 			  nextCellRight = document.getElementById(Right);
-// 			  nextCellDownLeft = document.getElementById(DownLeft);
-// 			  nextCellDown = document.getElementById(Down);
-// 			  nextCellDownRight = document.getElementById(DownRight);
-			 
-// 			 if(mUp !=0 && nLeft !=0)
-// 			 {
-// 				 if(nextCellUpLeft.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(mUp !=0)
-// 			 {
-// 				 if(nextCellUp.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(mUp !=0 && nRight <=columns)
-// 			 {
-// 				 if(nextCellUpRight.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(nLeft !=0)
-// 			 {
-// 				 if(nextCellLeft.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(nRight <=columns)
-// 			 {
-// 				 if(nextCellRight.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(mDown <=rows && nLeft !=0)
-// 			 {
-// 				 if(nextCellDownLeft.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(mDown <=rows)
-// 			 {
-// 				 if(nextCellDown.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-// 			 if(mDown <=rows && nRight <=columns)
-// 			 {
-// 				 if(nextCellDownRight.className=="tdClass2")
-// 				 {onOff = onOff+1;}
-// 			 }
-			 
-// 			 if(onOff == 2 || onOff == 3)
-// 			 {
-// 				 nextCell.innerHTML=".";
-// 			 }
-// 			 else
-// 			 {
-// 				 nextCell.innerHTML="";
-// 			 }
-			 
-// 		}
-// 	}
-// 	for(var o = 1; o <= rows; o++)
-// 	{
-// 		for(var p = 1; p <= columns; p++)
-// 		{
-// 			nextCellID=o+","+p;
-// 			if(nextCell.innerHTML=".")
-// 			{	
-// 				nextCell.className="tdClass2";
-// 				nextCell.innerHTML="";
-// 			}
-// 			else
-// 			{
-// 				nextCell.removeAttribute("Class");
-// 				nextCell.innerHTML="";
-// 			}
-// 		}
-// 	}
-//  }
