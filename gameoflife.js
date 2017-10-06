@@ -90,13 +90,13 @@ function increment1() {
 	for(let i = 0; i < grid.length; i++) {
 		for(let j = 0; j < grid.length; j++) {
 			var liveCellTotal = 0;
-			if (i != 0 || j != 0) { // top left of current cell
+			if (i != 0 && j != 0) { // top left of current cell
 				if (grid[i-1][j-1] == true) liveCellTotal++;
 			}
 			if (i != 0) { // above current cell
 				if (grid[i-1][j] == true) liveCellTotal++;
 			}
-			if (i != 0 || j != grid.length - 1) { // top right of current cell
+			if (i != 0 && j != grid.length - 1) { // top right of current cell
 				if (grid[i-1][j+1] == true) liveCellTotal++;
 			}
 			if (j != 0) { // left of current cell
@@ -105,13 +105,13 @@ function increment1() {
 			if (j != grid.length - 1) { // right of current cell
 				if (grid[i][j+1] == true) liveCellTotal++;
 			}
-			if (i != grid.length - 1 || j != 0) { // bottom left of current cell
+			if (i != grid.length - 1 && j != 0) { // bottom left of current cell
 				if (grid[i+1][j-1] == true) liveCellTotal++;
 			}
 			if (i != grid.length - 1) { // below of current cell
 				if (grid[i+1][j] == true) liveCellTotal++;
 			}
-			if (i != grid.length - 1 || j != grid.length - 1) { // bottom right of current cell
+			if (i != grid.length - 1 && j != grid.length - 1) { // bottom right of current cell
 				if (grid[i+1][j+1] == true) liveCellTotal++;
 			}
 			if (liveCellTotal == 3) {
