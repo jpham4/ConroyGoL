@@ -1,8 +1,7 @@
 
 var rows, columns;
-	grid = new Array(); // loop through this grid and set all attributes to false on reset
-	//liveList = new Array();
-// var	i, j;
+	grid = new Array(); 
+	var runner;
 function makeTable() {
     table.id = "table";
 	rows = prompt("Please enter the number of rows","");
