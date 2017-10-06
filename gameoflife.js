@@ -86,7 +86,15 @@ var nextCellID;
  var nextCellDownRight;
 
 function increment1() {
+	let newGrid = new Array();
+	//console.log(currentGrid.toString()); // explain this to me again later
 	//console.log(grid.length);
+	for(let i = 0; i < grid.length; i++) {
+		newGrid[i] = new Array();
+		for(let j = 0; j < grid.length; j++) {
+			newGrid[i][j] = grid[i][j];
+		}
+	}
 	for(let i = 0; i < grid.length; i++) {
 		for(let j = 0; j < grid.length; j++) {
 			var liveCellTotal = 0;
@@ -115,15 +123,21 @@ function increment1() {
 				if (grid[i+1][j+1] == true) liveCellTotal++;
 			}
 			if (liveCellTotal == 3) {
-				grid[i][j] = true;
+				newGrid[i][j] = true;
 				document.getElementById(i + ", " + j).className = "tdClass2";
 			}
 			if (liveCellTotal < 2 || liveCellTotal > 3) {
-				grid[i][j] = false;
+				newGrid[i][j] = false;
 				document.getElementById(i + ", " + j).removeAttribute("Class");
 			}
 		}
 	}
+	for(let i = 0; i < grid.length; i++) {
+		for(let j = 0; j < grid.length; j++) {
+			grid[i][j] = newGrid[i][j];
+		}
+	}
+	grid = newGrid;
 
 
 // topleft	if (row!=0 || column!=0 ) check [row# - 1][column# - 1];      //make sure position is not on upper or left bounds
