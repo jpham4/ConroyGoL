@@ -49,6 +49,16 @@ function makeTable() {
 		}
  }
 
+function start()
+ {
+	runner = setInterval(function(){ increment1() },500);
+ }
+ 
+ function stop()
+ {
+	clearInterval(runner);
+ }
+
 function increment1() {
 	let newGrid = new Array();
 	//console.log(currentGrid.toString()); // explain this to me again later
