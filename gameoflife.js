@@ -5,8 +5,8 @@ var rows, columns;
 	var currentGen =0;
 function makeTable() {
     table.id = "table";
-	rows = prompt("Please enter the number of rows","");
-	columns = prompt("Please enter the number of columns","");
+	rows = prompt("Please enter the dimension that will be used for the rows and columns");
+	columns = rows;
 
 	for(let i = 0; i < rows; i++) {
 			var tr = document.createElement("tr");
