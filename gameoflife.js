@@ -1,7 +1,7 @@
 
 var rows, columns;
 	grid = new Array(); 
-	var runner;
+	var runner = null;
 function makeTable() {
     table.id = "table";
 	rows = prompt("Please enter the number of rows","");
@@ -50,6 +50,7 @@ function makeTable() {
 
 function start()
  {
+	clearInterval(runner);
 	runner = setInterval(function(){ increment1() },500);
  }
  
