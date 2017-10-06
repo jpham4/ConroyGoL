@@ -16,38 +16,48 @@ function makeTable() {
 			{
 				var td = document.createElement("td");
 				grid[i][j] = false;
-
+				//console.log(i);
+                //console.log(j);
 				var rowcol = "" + i + ", " + j;
 				td.setAttribute('id',rowcol);
                 td.onmousedown = function() {
-                	
                     if (this.className != "tdClass2") {
                         this.className = "tdClass2";
                         console.log(i);
                         console.log(j);
                         grid[i][j] = true;
+                        //liveList.push(grid[i][j]);
+                        //displayLiveList();
+                        //var x = i;
+                        //var y = j;
+                        //displayCoordinates();
+                        //alert(i,", ", j);
+						//this.innerHTML=".";
                     }
                     else {
                     	this.removeAttribute("Class");
                     	grid[i][j] = false;
+                    	//liveList.pop(grid[i][j]);
+                    	//console.log("this works!");
+						//this.innerHTML="";
 					}
                 };
                 tr.appendChild(td);
 				table.appendChild(tr);
 			}
-		}
- }
+	}
+}
  
- function start()
- {
-	clearInterval(runner);
-	runner = setInterval(function(){ increment1() },500);
- }
- 
- function stop()
- {
-	clearInterval(runner);
- }
+function start()
+{
+clearInterval(runner);
+runner = setInterval(function(){ increment1() },500);
+}
+
+function stop()
+{
+clearInterval(runner);
+}
 
 function increment1() {
 	let newGrid = new Array();
