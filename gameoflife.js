@@ -121,3 +121,16 @@ function increment1() {
 		increment1();
 	}
 }
+
+function reset1()
+{
+	for(var x=0; x < rows; x++)
+	{
+		for(var y=0; y < columns ; y++)
+		{
+			grid[x][y] = false;
+			document.getElementById(x + ", " +y).removeAttribute("Class");
+		}
+	}
+	clearInterval(runner);
+}
