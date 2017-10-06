@@ -113,3 +113,11 @@ function increment1() {
 	}
 	grid = newGrid;
 }
+
+ function increment23()
+{
+	for(var i=0; i<23;i++)
+	{
+		increment1();
+	}
+}
